@@ -1,5 +1,5 @@
 # VkUnsubscriber
- Unsubscribe from all VK groups (using vk_api)
+ Unsubscribe from all VK groups (using Flask and vk_api)
 <img src="resources/Снимок экрана 2023-10-29 222707.png"/>
 <img src="resources/Снимок экрана 2023-10-29 222823.png"/>
 # Error:
