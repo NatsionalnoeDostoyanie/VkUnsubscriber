@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VkUnsubscriber</title>
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+    <label>Введите Ваш токен доступа (это совершенно небезопасно)</label>
+    <form method="POST">
+        <input type="text" name="access_token" required>
+        <input type="submit" value="НАЧАТЬ">
+    </form>
+    {% if status == 'success' %}
+        <p>Успешно покинуты все группы!</p>
+    {% else %}
+        {% if status != '' %}
+            <p>Ошибка: {{ status }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
