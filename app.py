@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import vk_api  # pip install vk_api
+import vk_api
 
 
 app = Flask(__name__)
@@ -16,15 +16,13 @@ def index():
             user = vk.users.get()
             user_id = user[0]['id']
 
-            for group_id in vk.groups.get(user_id=user_id, extended=0)['items']:
-                vk.groups.leave(group_id=int(group_id))
+            for group_id in map(int, vk.groups.get(user_id=user_id, extended=0)['items']):
+                vk.groups.leave(group_id=group_id)
 
             status = 'success'
 
         except Exception as e:
             status = str(e)
-
-        return render_template('index.html', status=status)
 
     return render_template('index.html', status=status)
 
